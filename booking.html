@@ -6,7 +6,7 @@
 </head>
 <body>
 <div>
-    <form method="post">
+    <form method="post" action="https://p4bkuyvb1h.execute-api.ap-south-1.amazonaws.com/dev/booking">
         <div>
             <label for="date-from">From: </label>
             <input type="date" name="date-from"/>
@@ -38,7 +38,7 @@
 </div>
 <br>
 <div>
-    <a href="{{ url_for('room_details') }}">Room Details (Admin Only)</a>
+    <a href="show_room_details.html">Room Details (Admin Only)</a>
 </div>
 </body>
 </html>
