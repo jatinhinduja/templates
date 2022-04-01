@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script type="text/javascript">
+            var apiUrl = 'https://p4bkuyvb1h.execute-api.ap-south-1.amazonaws.com/dev';
+            fetch(apiUrl).then(response => {
+              return response.json();
+            }).then(data => {
+              var result = [];
+              var s =data.body;
+              console.log(data.body);
+              var myObject = eval('(' + s + ')');
+              for (i in myObject)
+              {
+                result.push({"room_id": myObject[i]["room_id"], 'price': myObject[i]['price'], 'room_type': myObject[i]['room_type']});
+              }
+              console.log(result);
+              document.getElementById("demo").innerHTML=data.body;
+            }).catch(err => {
+              console.log(err)
+            });
+        </script>
+    </head>
+    <body>
+      <div class="heading">
+        <center><h1>Welcome</h1></center>
+    </div>
+    <div class="rooms">
+        <h3>Details about all the rooms are shown below: </h3>
+        <center>
+        <table border="1px" cellpadding="5px" id="demo">
+            <tr>
+                <th>Room No.</th>
+                <th>Room Type</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>{{ room['room_no'] }}</td>
+                <td>{{ room['room_type'] }}</td>
+                <td>{{ room['price'] }}</td>
+            </tr>
+        </table>
+        </center>
+    </div>
+    <div class="booking">
+        <a href="booking.html">Click here to book a room</a>
+    </div>
+    <br>
+    <div>
+        <a href="show_room_details.html">Room Details (Admin Only)</a>
+    </div>
+    </body>
+    </html>
