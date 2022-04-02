@@ -2,11 +2,10 @@
 <html>
 <head>
     <title>Booking</title>
-    <script src="js/booking.js"></script>
 </head>
 <body>
 <div>
-    <form method="post" action="https://p4bkuyvb1h.execute-api.ap-south-1.amazonaws.com/dev/booking">
+    <form action="https://p4bkuyvb1h.execute-api.ap-south-1.amazonaws.com/dev/booking">
         <div>
             <label for="date-from">From: </label>
             <input type="date" name="date-from"/>
@@ -29,16 +28,17 @@
         </div>
     </form>
 </div>
-<div>
+<!-- <div>
     <center>
         {% for item in message %}
         <h3>{{ item }}</h3>
         {% endfor %}
     </center>
-</div>
+</div> -->
 <br>
 <div>
     <a href="show_room_details.html">Room Details (Admin Only)</a>
 </div>
+<script src="js/booking.js"></script>
 </body>
 </html>
