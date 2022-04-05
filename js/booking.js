@@ -1,14 +1,13 @@
-jQuery("https://p4bkuyvb1h.execute-api.ap-south-1.amazonaws.com/dev/booking").submit(function(e){
-    //The following stops the form from redirecting
+const thisForm = document.getElementById('myForm');
+thisForm.addEventListener('submit', async function (e) {
     e.preventDefault();
-    jQuery("https://p4bkuyvb1h.execute-api.ap-south-1.amazonaws.com/dev/booking").ajaxSubmit({
-        type: 'POST',
-        url: jQuery('https://p4bkuyvb1h.execute-api.ap-south-1.amazonaws.com/dev/booking').attr('action'),
-        data: jQuery('https://p4bkuyvb1h.execute-api.ap-south-1.amazonaws.com/dev/booking').serialize(),
-        success: function (data) {
-            //The data variable will contain the response data
-            //if it's successful, you can no redirect wherever you want
-            window.location.href = "booking.html";
-        }
+    const formData = new FormData(thisForm).entries()
+    const response = await fetch('https://p4bkuyvb1h.execute-api.ap-south-1.amazonaws.com/dev/booking', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(formData))
     });
+
+    const result = await response.json();
+    console.log(result)
 });
