@@ -10,4 +10,5 @@ thisForm.addEventListener('submit', async function (e) {
 
     const result = await response.json();
     console.log(result)
+    // location.replace("booking_details.html")
 });
