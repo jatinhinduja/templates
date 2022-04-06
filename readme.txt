@@ -70,7 +70,7 @@ Structure (For developers):
           This API gets the admin table availability to render it to show_room_details.html.
 
     - Lambda:
-      All the lambda functions can be referred to in the "lambda.py" file.
+      All the lambda functions can be referred to in the "lambda_functions" directory.
 
     - S3:
       The bucket named "for-practice-inkwell" hosts and stores the project.
