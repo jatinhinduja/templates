@@ -1,8 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="js/booking_details.js"></script>
     </head>
     <body>
-        <h1>HELLO</h1>
+        <h3>The bill details</h3>
+        <table border="1px" cellpadding="5px" id="demo">
+            <tr>
+                <th>Room No.</th>
+                <th>Room Type</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>{{ room['room_no'] }}</td>
+                <td>{{ room['room_type'] }}</td>
+                <td>{{ room['price'] }}</td>
+            </tr>
+        </table>
     </body>
 </html>
