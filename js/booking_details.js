@@ -8,7 +8,8 @@ fetch(apiUrl)
     var result = [];
     var s = data.body;
     console.log(data.body);
-    document.getElementById("demo").innerHTML = data.body;
+    const myJSON = JSON.stringify(data.body);
+    document.getElementById("demo").innerHTML = myJSON;
   })
   .catch((err) => {
     console.log(err);

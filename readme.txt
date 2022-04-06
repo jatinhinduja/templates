@@ -73,3 +73,8 @@ Structure (For developers):
       All the lambda functions can be referred to in the lambda.py file
 
 
+Contact for additional information:
+
+    - XXXX@gmail.com
+    - XXXX@gmail.com
+
